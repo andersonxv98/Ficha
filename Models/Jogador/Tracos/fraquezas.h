@@ -3,15 +3,19 @@
 
 #include <string>
 
-
+using namespace std;
 
 class Fraquezas
 {
 public:
-    Fraquezas();
-   private:
+    Fraquezas(string fraqueza);
+
+    string getFraqueza();
+
+private:
     int id;
-    std::string _fraqueza;
+    string _fraqueza;
+    void setFraqueza(string fraqueza);
 };
 
 #endif // FRAQUEZAS_H

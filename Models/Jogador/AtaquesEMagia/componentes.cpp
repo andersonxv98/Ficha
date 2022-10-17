@@ -27,6 +27,65 @@ bool Componentes::getMaterial(){
     return this->material;
 }
 
+void Componentes::changeV()
+{
+    if(this->getVerbal()){
+           this->verbal  = false;
+       }
+       else{
+           this->verbal = true;
+       }
+}
+
+void Componentes::changeS()
+{
+    if(this->getGestos()){
+           this->gestos  = false;
+       }
+       else{
+           this->gestos = true;
+       }
+}
+
+void Componentes::changeM()
+{   if(this->getMaterial()){
+        this->material  = false;
+    }
+    else{
+        this->material = true;
+    }
+}
+
+void Componentes::reset()
+{
+    this->gestos = false;
+    this->material = false;
+    this->verbal = false;
+}
+
+string Componentes::getStringVerbal(){
+    string y = "true";
+    if(this->verbal == false){
+       y = "false";
+    }
+    return y;
+}
+
+string Componentes::getStringGestos(){
+    string y = "true";
+    if(this->gestos == false){
+       y = "false";
+    }
+    return y;
+}
+
+string Componentes::getStringMateriais(){
+    string y = "true";
+    if(this->material == false){
+       y = "false";
+    }
+    return y;
+}
 bool Componentes::getVerbal(){
     return this->verbal;
 }

@@ -10,11 +10,13 @@ class Idiomas
 {
 public:
     Idiomas();
-    void addIdioma(string idioma);
-    void rmvIdioma(string idioma);
+    void addIdioma(string  idioma);
+    void rmvIdioma(string  idioma);
     list<string> getIdiomas();
+    int getId();
 private:
     int id;
+
     list<string> idiomas;
 
 

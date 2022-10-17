@@ -1,16 +1,13 @@
-QT += quick
+QT += quick \
+        widgets
 
 SOURCES += \
+        Controllers/ControllerTest.cpp \
+        Controllers/salvar.cpp \
         Models/AnimaisEVeiculos/animais.cpp \
         Models/AnimaisEVeiculos/genericovan.cpp \
         Models/AnimaisEVeiculos/veiculos.cpp \
         Models/Equipamentos/arma.cpp \
-        Models/Equipamentos/armadura.cpp \
-        Models/Equipamentos/equipamento_aventura.cpp \
-        Models/Equipamentos/ferramentas.cpp \
-        Models/Equipamentos/objetoequipamento.cpp \
-        Models/Equipamentos/outros.cpp \
-        Models/Equipamentos/propriedades_arma.cpp \
         Models/Jogador/AtaquesEMagia/ataquesemagia.cpp \
         Models/Jogador/AtaquesEMagia/componentes.cpp \
         Models/Jogador/AtaquesEMagia/listaataquesemagias.cpp \
@@ -30,17 +27,18 @@ SOURCES += \
         Models/Jogador/Proeficiencias/pericias.cpp \
         Models/Jogador/Proeficiencias/proeficiencias.cpp \
         Models/Jogador/Proeficiencias/testeresistencia.cpp \
-        Models/Jogador/Tracos/fraquezas.cpp \
-        Models/Jogador/Tracos/ideais.cpp \
-        Models/Jogador/Tracos/personalidade.cpp \
-        Models/Jogador/Tracos/vinculos.cpp \
         Models/Jogador/atributos.cpp \
         Models/Jogador/caracteristicas.cpp \
+        Models/Jogador/caracteristicasehabilidades.cpp \
+        Models/Jogador/defeitos.cpp \
         Models/Jogador/equipados.cpp \
+        Models/Jogador/ideais.cpp \
         Models/Jogador/idiomas.cpp \
         Models/Jogador/jogador.cpp \
+        Models/Jogador/ligacoes.cpp \
         Models/Jogador/mochila.cpp \
         Models/Jogador/status.cpp \
+        Models/Jogador/statuspericias.cpp \
         Models/Jogador/tracos.cpp \
         main.cpp
 
@@ -48,7 +46,36 @@ resources.files = main.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
     Views/Ficha.qml \
-    Views/SideBar.qml
+    Views/SideBar.qml \
+    Views/SegundaParteFicha.qml \
+    Views/PrimeiraParteFicha.qml \
+    Views/PrimeiraParteAntecedentes.qml \
+    Views/SegundaParteAntecedentes.qml \
+    Views/ConteudoTerceiraParte.qml \
+    Views/TracosEpersonalidade.qml \
+    Views/ConteudoSegundaParte.qml \
+    Views/ClasseDeArmaduraEOutrosRow.qml \
+    Views/StatusView.qml \
+    Views/PontodeVida.qml \
+    Views/DadodeVidaEoutro.qml \
+    Views/AtaquesEconjuracao.qml \
+    Views/ConteudoPrimeiraParte.qml \
+    Views/OutrasProeficienciasIdiomas.qml \
+    Views/AtributosPericiaseoutros.qml \
+    Views/Atributos.qml \
+    Views/TesteResistenciaPericia.qml \
+    Views/Percepcao.qml \
+    Views/IdiomasEOutros.qml \
+    Views/NovaJanela.qml \
+    Views/EquipamentosView.qml \
+    Views/NewIdioma.qml \
+    Views/NewEquip.qml \
+    Views/TracodePersonalidade.qml \
+    Views/CaracteristicasEHabilidades.qml \
+     Views/Ideais.qml \
+     Views/Ligacoes.qml \
+     Views/Defeitos.qml \
+    Views/Imgs/Ficha.png
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -62,21 +89,48 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Views/AtaquesEconjuracao.qml \
+    Views/Atributos.qml \
+    Views/AtributosPericiaseoutros.qml \
+    Views/CaracteristicasEHabilidades.qml \
+    Views/ClasseDeArmaduraEOutrosRow.qml \
+    Views/ConteudoPrimeiraParte.qml \
+    Views/ConteudoSegundaParte.qml \
+    Views/ConteudoTerceiraParte.qml \
+    Views/DadodeVidaEoutro.qml \
+    Views/Defeitos.qml \
+    Views/EquipamentosView.qml \
     Views/Ficha.qml \
+    Views/Habilidade.qml \
+    Views/Ideais.qml \
+    Views/IdiomasEOutros.qml \
+    Views/Ligacoes.qml \
+    Views/NewEquip.qml \
+    Views/NewIdioma.qml \
+    Views/NovaJanela.qml \
+    Views/OutrasProeficienciasIdiomas.qml \
+    Views/Percepcao.qml \
+    Views/PontodeVida.qml \
+    Views/PrimeiraParteAntecedentes.qml \
+    Views/PrimeiraParteFicha.qml \
+    Views/SegundaParteAntecedentes.qml \
+    Views/SegundaParteFicha.qml \
     Views/SideBar.qml \
-    Views/TelaPrincipal.qml
+    Views/Imgs/Ficha.png \
+    Views/StatusView.qml \
+    Views/TracodePersonalidade.qml \
+    Views/TracosEpersonalidade.qml \
+    Views/TesteResistenciaPericia.qml \
+    jornadacaranguejo
+
 
 HEADERS += \
+    Controllers/ControllerTest.h \
+    Controllers/salvar.h \
     Models/AnimaisEVeiculos/animais.h \
     Models/AnimaisEVeiculos/genericovan.h \
     Models/AnimaisEVeiculos/veiculos.h \
     Models/Equipamentos/arma.h \
-    Models/Equipamentos/armadura.h \
-    Models/Equipamentos/equipamento_aventura.h \
-    Models/Equipamentos/ferramentas.h \
-    Models/Equipamentos/objetoequipamento.h \
-    Models/Equipamentos/outros.h \
-    Models/Equipamentos/propriedades_arma.h \
     Models/Jogador/AtaquesEMagia/ataquesemagia.h \
     Models/Jogador/AtaquesEMagia/componentes.h \
     Models/Jogador/AtaquesEMagia/listaataquesemagias.h \
@@ -96,15 +150,16 @@ HEADERS += \
     Models/Jogador/Proeficiencias/pericias.h \
     Models/Jogador/Proeficiencias/proeficiencias.h \
     Models/Jogador/Proeficiencias/testeresistencia.h \
-    Models/Jogador/Tracos/fraquezas.h \
-    Models/Jogador/Tracos/ideais.h \
-    Models/Jogador/Tracos/personalidade.h \
-    Models/Jogador/Tracos/vinculos.h \
     Models/Jogador/atributos.h \
     Models/Jogador/caracteristicas.h \
+    Models/Jogador/caracteristicasehabilidades.h \
+    Models/Jogador/defeitos.h \
     Models/Jogador/equipados.h \
+    Models/Jogador/ideais.h \
     Models/Jogador/idiomas.h \
     Models/Jogador/jogador.h \
+    Models/Jogador/ligacoes.h \
     Models/Jogador/mochila.h \
     Models/Jogador/status.h \
+    Models/Jogador/statuspericias.h \
     Models/Jogador/tracos.h

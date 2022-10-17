@@ -1,7 +1,11 @@
 #ifndef COMPONENTES_H
 #define COMPONENTES_H
 
+#include <list>
+#include <string>
 
+
+using namespace std;
 class Componentes
 {
 public:
@@ -11,6 +15,14 @@ public:
     bool getGestos();
     bool getMaterial();
 
+    void changeV();
+    void changeS();
+    void changeM();
+    void reset();
+
+    string getStringVerbal();
+    string getStringGestos();
+    string getStringMateriais();
 private:
     int id;
     bool verbal;

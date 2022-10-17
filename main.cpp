@@ -1,19 +1,38 @@
+#include "Controllers/ControllerTest.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <iostream>
+#include <QQmlProperties>
+#include <QQuickItem>
+#include <QObject>
+#include <QQmlContext>
 
+
+
+using namespace std;
 
 int main(int argc, char *argv[])
-{
+{   // INICALIZAÇÂO DA VIEW QT
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    const QUrl url(u"qrc:/Ficha/main.qml"_qs);
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
+    const QUrl url("qrc:/Ficha/main.qml");
+    Componentes cp  = Componentes(false,false,false);
+    ControllerTest * novoControlador = new ControllerTest(cp);
+     engine.rootContext()->setContextProperty("controllador",novoControlador);
+
     engine.load(url);
 
-    return app.exec();
+    QObject *win = (engine.rootObjects())[0];
+    novoControlador->setWin(win);
+    novoControlador->setEngine(&engine);
+    // -------------------------------TEREZA
+    cout<<"Teste: Iniciou a rodda pelé "<<endl;
+    novoControlador->Carregarinformacoes();
+    app.exec();
+
+
+    return 0;
+
+
 }

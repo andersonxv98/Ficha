@@ -1,13 +1,20 @@
 #include "testeresistencia.h"
+#include <iostream>
+TesteResistencia::TesteResistencia(Atributos &atributos)
+{   int modforca = atributos.getModForca();
+    int moddes = atributos.getModDestreza();
+    int modcon = atributos.getModConstituicao();
+    int modint = atributos.getModInteligencia();
+    int modsab = atributos.getModSabedoria();
+    int modcar = atributos.getModCarisma();
+    std::cout<<"CONTRUTOR TESTERESISTENCIA:: "<<modint<<std::endl;
 
-TesteResistencia::TesteResistencia(int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma)
-{
-    this-> setForca( forca);
-     this-> setDestreza( destreza);
-     this-> setConstituicao( constituicao);
-     this-> setInteligencia( inteligencia);
-     this-> setSabedoria( sabedoria);
-     this-> setCarisma( carisma);
+    this-> setForca( modforca);
+     this-> setDestreza( moddes);
+     this-> setConstituicao( modcon);
+     this-> setInteligencia( modint);
+     this-> setSabedoria( modsab);
+     this-> setCarisma( modcar);
 }
 
 void TesteResistencia::setForca(int forca){
@@ -23,8 +30,9 @@ void TesteResistencia::setConstituicao(int constituicao){
 }
 
 void TesteResistencia::setInteligencia(int inteligencia)
-{
+{   std::cout<<"SETTING INTELIGENCIA: "<<inteligencia<<std::endl;
     this->inteligencia = inteligencia;
+     std::cout<<"SETTING INTELIGENCIA: THIS_>"<<this->inteligencia<<std::endl;
 }
 
 void TesteResistencia::setSabedoria(int sabedoria){
@@ -35,7 +43,7 @@ void TesteResistencia::setCarisma(int carisma){
     this->carisma = carisma;
 }
 
-int TesteResistencia::getForca(){
+int TesteResistencia::getForcaResist(){
     return this->forca;
 }
 
@@ -50,6 +58,7 @@ int TesteResistencia::getConstituicao(){
     return this->constituicao;
 }
 int TesteResistencia::getInteligencia(){
+     std::cout<<"RETORNO  INTELIGENCIA RESISTENCIA: "<<this->inteligencia<<std::endl;
     return this->inteligencia;
 
 }

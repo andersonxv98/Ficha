@@ -14,12 +14,12 @@ class ListaAtaquesEMagias
 {
 public:
     ListaAtaquesEMagias();
-    void addAtaqueMagiaNaLista(AtaquesEMagia AM);
-    void rmvAtaqueMagiaNaLista(AtaquesEMagia AM);
-    list<AtaquesEMagia> getListaAtaquesEMagia();
+    void addAtaqueMagiaNaLista(AtaquesEMagia * AM);
+    void rmvAtaqueMagiaNaLista(int id_am);
+    list<AtaquesEMagia *> getListaAtaquesEMagia();
 private:
     int id();
-    list<AtaquesEMagia> _listaAtaqueseMagias;
+    list<AtaquesEMagia *> _listaAtaqueseMagias;
 };
 
 #endif // LISTAATAQUESEMAGIAS_H

@@ -3,15 +3,19 @@
 
 #include <string>
 
-
+using namespace std;
 
 class Personalidade
 {
 public:
-    Personalidade();
+    Personalidade(string personalite);
+
+    string getPersonalidade();
  private:
     int id;
-    std::string _traco_personalidade;
+    string _traco_personalidade;
+
+    void setPersonalidade(string personalidade);
 };
 
 #endif // PERSONALIDADE_H

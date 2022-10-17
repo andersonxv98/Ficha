@@ -16,20 +16,23 @@ void Mochila::setCapacidadeAtual(double capacidade){
     this->capacidade_atual = capacidade;
 }
 
-void Mochila::addObjetoNaMochila(ObjetoEquipamento obj){
+void Mochila::addObjetoNaMochila(Arma * obj){
     this->_objetos.push_back(obj);
-    this->capacidade_atual =obj.getPeso();
+    this->capacidade_atual =obj->getPeso();
 }
 
-void Mochila::rmvObjetoDaMochila(ObjetoEquipamento obj){
-    for(ObjetoEquipamento x : this->_objetos){
-        if (x.getId() == obj.getId()){
-            //this->_objetos.remove(x);
-            std::cout<<"Funcionou remover objeto";
+void Mochila::rmvObjetoDaMochila(int id_item){
+    for(Arma *x : this->_objetos){
+        if (x->getId() ==id_item){
+            cout<<"VALOR: "<<x->getId()<<endl;
+            cout<<"ID_ITEM: "<<id_item<<endl;
+            this->_objetos.remove(x);
+            std::cout<<"Funcionou remover objeto"<<endl;
+            break;
         }
     }
 }
 
-list<ObjetoEquipamento> Mochila::getTodosObjetosNaMochila(){
+list<Arma * > Mochila::getTodosObjetosNaMochila(){
     return this->_objetos;
 }

@@ -2,8 +2,9 @@
 
 using namespace std;
 ObjetoEquipamento::ObjetoEquipamento(Armadura &armadura, Arma &arma, Equipamento_Aventura &equipamento_aventura, Ferramentas &ferramenta, Outros &outro)
+    : _armadura(armadura), _arma(arma), _equipamento_aventura(equipamento_aventura), _ferramentas(ferramenta), _outros(outro)
 {
-    this->_armadura =  &armadura;
+    /*this->_armadura =  &armadura;
      this->_arma = &arma;
      this-> _equipamento_aventura =  &equipamento_aventura;
      this->_ferramentas = &ferramenta;
@@ -22,13 +23,18 @@ ObjetoEquipamento::ObjetoEquipamento(Armadura &armadura, Arma &arma, Equipamento
     }
     else if(_outros != NULL){
        this->peso = 0;
-    }
+    }*/
 
 }
 
 
 int ObjetoEquipamento::getId(){
     return this->id;
+}
+
+Armadura ObjetoEquipamento::getArmadura()
+{
+
 }
 
 double ObjetoEquipamento::getPeso(){

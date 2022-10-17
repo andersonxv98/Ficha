@@ -1,14 +1,17 @@
 #ifndef TESTERESISTENCIA_H
 #define TESTERESISTENCIA_H
 
+#include <Models/Jogador/atributos.h>
+
+
 
 class TesteResistencia
 {
 public:
-    TesteResistencia(int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma);
+    TesteResistencia(Atributos &atributos);
 
     int getId();
-    int getForca();
+    int getForcaResist();
     int getDestreza();
     int getConstituicao();
     int getInteligencia();

@@ -10,20 +10,17 @@ Idiomas::Idiomas()
 
 }
 
+
 void Idiomas::addIdioma(string idioma){
-    for(string dioma : this->idiomas){
-        if(dioma == idioma){
-            return;
-        }
-         this->idiomas.push_back(idioma);
-    }
-    return;
+
+        this->idiomas.push_back(idioma);
+        cout<<"ADDIDIOMA: _> STRINH"<<endl;
 
 
 }
 
 void Idiomas::rmvIdioma(string idioma){
-    this->idiomas.push_back(idioma);
+    this->idiomas.remove(idioma);
 }
 
 list<string> Idiomas::getIdiomas(){

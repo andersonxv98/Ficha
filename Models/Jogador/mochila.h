@@ -10,20 +10,17 @@ public:
 
     double getCapacidadeAtual();
     double getCapacidadeTotal();
-    list<ObjetoEquipamento> getTodosObjetosNaMochila();
+    list<Arma *> getTodosObjetosNaMochila();
 
-    void addObjetoNaMochila(ObjetoEquipamento obj);
-    void rmvObjetoDaMochila(ObjetoEquipamento obj);
+    void addObjetoNaMochila(Arma * obj);
+    void rmvObjetoDaMochila(int  id_item);
 private:
     int id;
-    list<ObjetoEquipamento> _objetos;
+    list<Arma*> _objetos;
     double capacidade_total;
     double capacidade_atual;
-
     void setCapacidadeTotal(double capacidade);
     void setCapacidadeAtual(double capacidade);
-
-
 };
 
 #endif // MOCHILA_H

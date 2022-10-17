@@ -1,25 +1,26 @@
 import QtQuick
 import QtQuick.Controls
-import "qrc:Views/"  as Views
 
-ApplicationWindow {
-    width: 640
-    height: 480
+
+
+
+ApplicationWindow{
+    id: mainwindow
     visible: true
+    width: 1024
+    height: 800
     title: qsTr("Hello World")
-
-    //Views.
+    //visibility: "FullScreen"
+    visibility: "Windowed"
 
     StackView{
         id:stack
-        width: 200
-        height: 200
         initialItem: "qrc:/Views/Ficha.qml"
     }
     Drawer{
         Loader{
             source: "qrc:/Views/SideBar.qml"
         }
-    }
+}
 
 }
